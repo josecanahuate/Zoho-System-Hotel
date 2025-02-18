@@ -21,7 +21,7 @@ public function verify(){
             header('Location: ' . RUTA_PRINCIPAL . '?respuesta=warning');
         } else {
             $data = $this->model->getDisponible($fecha_llegada, $fecha_salida, $habitacion);
-            print_r($data);
+            #print_r($data);
         }
     }
 }

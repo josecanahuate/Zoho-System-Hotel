@@ -11,24 +11,8 @@ class PrincipalModel extends Query{
 
     //RECUPERAR LAS HABITACIONES
     public function getHabitaciones(){
-        return $this->selectAll("SELECT * FROM habitaciones");
+        return $this->selectAll("SELECT * FROM habitaciones WHERE estado = 1");
     }
-
-    public function getDisponible($fecha_llegada, $fecha_salida, $habitacion){
-        return $this->selectAll("SELECT * FROM reservas
-        WHERE fecha_ingreso <= '$fecha_llegada'
-        AND fecha_salida >= '$fecha_salida'
-        AND id_habitacion = '$habitacion'
-        ");
-    }
-
-/*     public function getDisponible($fecha_llegada, $fecha_salida, $habitacion){
-        return $this->selectAll("SELECT * FROM reservas
-        WHERE fecha_ingreso <= '$fecha_salida'
-        AND fecha_salida >= '$fecha_llegada'
-        AND id_habitacion = '$habitacion'
-        ");
-    } */
 }
 
 ?>
